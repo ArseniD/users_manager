@@ -1,6 +1,7 @@
 import pytest
 import subprocess
 
+
 from hr import users
 
 # encrypted version of 'password'
@@ -11,6 +12,7 @@ user_dict = {
     'groups': ['wheel', 'dev'],
     'password': password
 }
+
 
 def test_users_add(mocker):
     """
@@ -29,6 +31,7 @@ def test_users_add(mocker):
         'kevin',
     ])
 
+
 def test_users_remove(mocker):
     """
     Given a user dictionary, `users.remove(...)` should
@@ -41,6 +44,8 @@ def test_users_remove(mocker):
         '-r',
         'kevin',
     ])
+
+
 
 def test_users_update(mocker):
     """
@@ -58,6 +63,7 @@ def test_users_update(mocker):
         'wheel,dev',
         'kevin',
     ])
+
 
 def test_users_sync(mocker):
     """

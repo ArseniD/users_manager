@@ -1,7 +1,9 @@
 import pytest
 import tempfile
 
+
 from hr import inventory
+
 
 def test_inventory_load():
     """
@@ -44,6 +46,7 @@ def test_inventory_load():
         'groups': [],
         'password': 'password_three'
     }
+
 
 def test_inventory_dump(mocker):
     """

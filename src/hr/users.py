@@ -4,6 +4,7 @@ import sys
 
 from .helpers import user_names
 
+
 def add(user_info):
     print(f"Adding user '{user_info['name']}'")
     try:
@@ -19,6 +20,7 @@ def add(user_info):
         print(f"Failed to add user '{user_info['name']}'")
         sys.exit(1)
 
+
 def remove(user_info):
     print(f"Removing user '{user_info['name']}'")
     try:
@@ -30,6 +32,7 @@ def remove(user_info):
     except:
         print(f"Failed to remove user '{user_info['name']}'")
         sys.exit(1)
+
 
 def update(user_info):
     print(f"Updating user '{user_info['name']}'")
@@ -46,6 +49,7 @@ def update(user_info):
         print(f"Failed to update user '{user_info['name']}'")
         sys.exit(1)
 
+
 def sync(users, existing_user_names=None):
     existing_user_names = (existing_user_names or user_names())
     user_names = [user['name'] for user in users]
@@ -57,6 +61,7 @@ def sync(users, existing_user_names=None):
     for user_name in existing_user_names:
         if not user_name in user_names:
             remove({'name': user_name})
+
 
 def _groups_str(user_info):
     return ','.join(user_info['groups'] or [])
